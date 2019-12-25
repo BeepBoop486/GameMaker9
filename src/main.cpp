@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include "WelcomeWindow.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
@@ -6,7 +6,8 @@ int main(int argc, char *argv[])
 	freopen("CONOUT$", "w", stdout);
 
 	QApplication app(argc, argv);
-	MainWindow window;
+	WelcomeWindow window;
 	window.show();
 	return app.exec();
 }
+
