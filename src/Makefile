@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = PK\ Creator1.0.0
-DISTDIR = /home/mya/Documents/PK\ Creator/.tmp/PK\ Creator1.0.0
+DISTDIR = /home/mya/Documents/PK\ Creator/src/.tmp/PK\ Creator1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now
 LIBS          = $(SUBLIBS) /usr/lib/libQt5Widgets.so /usr/lib/libQt5Gui.so /usr/lib/libQt5Core.so -lGL -lpthread -lmd4c   
@@ -197,7 +197,7 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
-		.qmake.stash \
+		../.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -356,7 +356,7 @@ Makefile: PK\ Creator.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/m
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
-		.qmake.stash \
+		../.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -486,7 +486,7 @@ Makefile: PK\ Creator.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/m
 /usr/lib/qt/mkspecs/features/qt_config.prf:
 /usr/lib/qt/mkspecs/linux-g++/qmake.conf:
 /usr/lib/qt/mkspecs/features/spec_post.prf:
-.qmake.stash:
+../.qmake.stash:
 /usr/lib/qt/mkspecs/features/exclusive_builds.prf:
 /usr/lib/qt/mkspecs/features/toolchain.prf:
 /usr/lib/qt/mkspecs/features/default_pre.prf:
@@ -537,7 +537,6 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
-	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -587,46 +586,46 @@ compiler_moc_header_clean:
 moc_CodeEditor.cpp: CodeEditor.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include CodeEditor.h -o moc_CodeEditor.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include CodeEditor.h -o moc_CodeEditor.cpp
 
 moc_EventItem.cpp: EventItem.h \
 		CodeEditorWindow.h \
 		ui_CodeWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include EventItem.h -o moc_EventItem.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include EventItem.h -o moc_EventItem.cpp
 
 moc_MainWindow.cpp: MainWindow.h \
 		ui_MainWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include MainWindow.h -o moc_MainWindow.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include MainWindow.h -o moc_MainWindow.cpp
 
 moc_Object.cpp: Object.h \
 		Item.h \
 		ui_ObjectWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Object.h -o moc_Object.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Object.h -o moc_Object.cpp
 
 moc_ResourceView.cpp: ResourceView.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include ResourceView.h -o moc_ResourceView.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include ResourceView.h -o moc_ResourceView.cpp
 
 moc_Sprite.cpp: Sprite.h \
 		ui_SpriteWindow.h \
 		Item.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Sprite.h -o moc_Sprite.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Sprite.h -o moc_Sprite.cpp
 
 moc_Texture.cpp: Texture.h \
 		Item.h \
 		ui_TextureWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator' -I'/home/mya/Documents/PK Creator' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Texture.h -o moc_Texture.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Texture.h -o moc_Texture.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
