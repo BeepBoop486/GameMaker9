@@ -4,6 +4,7 @@
 #include <QResizeEvent>
 #include <QItemSelection>
 #include <QModelIndex>
+#include <QTime>
 
 #include <ResourceView.h>
 #include <Object.h>
@@ -45,6 +46,9 @@ void MainWindow::Load(Project * project)
 {
 	m_proInfo = project;
 
+    QTime timer;
+    timer.start();
+
 	if (m_proInfo)
 	{
 		printf("Opening...\n");
@@ -64,8 +68,8 @@ void MainWindow::Load(Project * project)
 		QDataStream stream(&file);
 
 		//QString version;
-        QString version;
-        stream >> version;
+        QString version, name;
+        stream >> version >> name;
         printf("Version: \"%s\"\n", version.toStdString().c_str());
 
         if (version != "PKP1")
@@ -79,11 +83,14 @@ void MainWindow::Load(Project * project)
 	}
 
 
-	printf("Loaded: \"%s\" \"%s\"\n", m_proInfo->name.toStdString().c_str(), m_proInfo->path.toStdString().c_str());
+    printf("Loaded \"%s\" in %d ms \n", m_proInfo->name.toStdString().c_str(), timer.elapsed());
 }
 
 void MainWindow::Save()
 {
+    QTime timer;
+    timer.start();
+
 	if (m_proInfo)
 	{
 		QFile file(m_proInfo->path + m_proInfo->name + QString(".pkp"));
@@ -92,12 +99,14 @@ void MainWindow::Save()
 		QDataStream stream(&file);
 
 		// version id
-        stream << QString("PKP1");
+        stream << QString("PKP1") << m_proInfo->name;
 
 		m_pResView->Save(&stream);
 
 		file.close();
 	}
+
+    printf("Saved in: %d ms\n", timer.elapsed());
 }
 
 void MainWindow::ActionSaveProject_triggered()
