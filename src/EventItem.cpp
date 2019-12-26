@@ -54,7 +54,7 @@ void EventItem::closeEvent(QCloseEvent *closeEvent)
 
 	if (newCode != m_code)
 	{
-		QMessageBox::StandardButtons result = QMessageBox::question(this, "PK Creator", "Do you want to save the changes?", QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+		QMessageBox::StandardButtons result = QMessageBox::question(this, "GameMaker 9", "Do you want to save the changes?", QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
 
 		if (result == QMessageBox::Yes)
 		{

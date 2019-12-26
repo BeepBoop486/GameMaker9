@@ -592,52 +592,52 @@ compiler_moc_header_clean:
 moc_CodeEditor.cpp: CodeEditor.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include CodeEditor.h -o moc_CodeEditor.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include CodeEditor.h -o moc_CodeEditor.cpp
 
 moc_EventItem.cpp: EventItem.h \
 		CodeEditorWindow.h \
 		ui_CodeWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include EventItem.h -o moc_EventItem.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include EventItem.h -o moc_EventItem.cpp
 
 moc_MainWindow.cpp: MainWindow.h \
 		ui_MainWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include MainWindow.h -o moc_MainWindow.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include MainWindow.h -o moc_MainWindow.cpp
 
 moc_Object.cpp: Object.h \
 		Item.h \
 		ui_ObjectWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Object.h -o moc_Object.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Object.h -o moc_Object.cpp
 
 moc_ResourceView.cpp: ResourceView.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include ResourceView.h -o moc_ResourceView.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include ResourceView.h -o moc_ResourceView.cpp
 
 moc_Sprite.cpp: Sprite.h \
 		ui_SpriteWindow.h \
 		Item.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Sprite.h -o moc_Sprite.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Sprite.h -o moc_Sprite.cpp
 
 moc_Texture.cpp: Texture.h \
 		Item.h \
 		ui_TextureWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Texture.h -o moc_Texture.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include Texture.h -o moc_Texture.cpp
 
 moc_WelcomeWindow.cpp: WelcomeWindow.h \
 		ui_WelcomeWindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/PK Creator/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/PK Creator/src' -I'/home/mya/Documents/PK Creator/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include WelcomeWindow.h -o moc_WelcomeWindow.cpp
+	/usr/bin/moc $(DEFINES) --include '/home/mya/Documents/GameMaker 9/src/moc_predefs.h' -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/mya/Documents/GameMaker 9/src' -I'/home/mya/Documents/GameMaker 9/src' -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/9.2.0 -I/usr/include/c++/9.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/9.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed -I/usr/include WelcomeWindow.h -o moc_WelcomeWindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

@@ -76,7 +76,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindowClass)
     {
-        MainWindowClass->setWindowTitle(QCoreApplication::translate("MainWindowClass", "PK Creator ", nullptr));
+        MainWindowClass->setWindowTitle(QCoreApplication::translate("MainWindowClass", "GameMaker 9 ", nullptr));
         actionNewProject->setText(QCoreApplication::translate("MainWindowClass", "New Project", nullptr));
         actionOpenProject->setText(QCoreApplication::translate("MainWindowClass", "Open Project", nullptr));
         actionSaveProject->setText(QCoreApplication::translate("MainWindowClass", "Save Project", nullptr));

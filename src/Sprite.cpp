@@ -109,7 +109,7 @@ void Sprite::OkButton_clicked()
 
 	if (ResourceView::Get()->IsNameExists(name) && name != m_itemName)
 	{
-		QMessageBox::information(this, "PK Creator", "This name already exists!");
+		QMessageBox::information(this, "GameMaker 9", "This name already exists!");
 		return;
 	}
 

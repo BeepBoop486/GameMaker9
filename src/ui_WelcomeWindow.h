@@ -88,7 +88,7 @@ public:
 
     void retranslateUi(QWidget *WelcomeWindow)
     {
-        WelcomeWindow->setWindowTitle(QCoreApplication::translate("WelcomeWindow", "PK Creator - Welcone screen", nullptr));
+        WelcomeWindow->setWindowTitle(QCoreApplication::translate("WelcomeWindow", "GameMaker 9 - Welcone screen", nullptr));
         createButton->setText(QCoreApplication::translate("WelcomeWindow", "Create project", nullptr));
         openButton->setText(QCoreApplication::translate("WelcomeWindow", "Open project", nullptr));
         deleteButton->setText(QCoreApplication::translate("WelcomeWindow", "Delete project", nullptr));

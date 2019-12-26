@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PK Creator - Welcone screen</string>
+   <string>GameMaker 9 - Welcone screen</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

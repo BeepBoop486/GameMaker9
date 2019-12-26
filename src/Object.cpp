@@ -197,7 +197,7 @@ void Object::OkButton_clicked()
 
 	if (ResourceView::Get()->IsNameExists(name) && name != m_itemName)
 	{
-		QMessageBox::information(this, "PK Creator", "This name already exists!");
+		QMessageBox::information(this, "GameMaker 9", "This name already exists!");
 		return;
 	}
 
@@ -250,7 +250,7 @@ void Object::AddEventAction_triggered(int eventType)
 
 	if (GetEvent(eventType))
 	{
-		QMessageBox::information(this, "PK Creator", QString::asprintf("%s already exists!", m_eventName[eventType].toStdString().c_str()));
+		QMessageBox::information(this, "GameMaker 9", QString::asprintf("%s already exists!", m_eventName[eventType].toStdString().c_str()));
 
 		return;
 	}
