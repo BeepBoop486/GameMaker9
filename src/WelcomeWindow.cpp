@@ -13,10 +13,10 @@ WelcomeWindow::WelcomeWindow(QWidget *parent)
 {
 	m_ui.setupUi(this);
 
-	LoadList();
+    //LoadList();
+    m_pMainWnd = nullptr;
 
-	m_pMainWnd = new MainWindow(this);
-	m_pMainWnd->hide();
+    LoadList();
 
 	connect(m_ui.createButton, &QPushButton::clicked, this, &WelcomeWindow::CreateButton_clicked);
 	connect(m_ui.openButton, &QPushButton::clicked, this, &WelcomeWindow::OpenButton_clicked);
@@ -137,6 +137,17 @@ void WelcomeWindow::CreateButton_clicked()
 	m_projectList.push_back(pro);
 
 	m_ui.projectView->insertTopLevelItem(m_ui.projectView->topLevelItemCount(), treeItem);
+
+    QFile projectFile(filePath);
+
+    projectFile.open(QFile::WriteOnly);
+    QDataStream stream(&projectFile);
+
+    stream << QString("PKP1") << projectName;
+    projectFile.close();
+
+    QDir currDir(folderPath);
+    currDir.mkdir("resources");
 }
 
 void WelcomeWindow::OpenButton_clicked()
@@ -155,6 +166,13 @@ void WelcomeWindow::OpenButton_clicked()
 		{
 			if (m_projectList[i]->item == treeItem)
 			{
+                if(m_pMainWnd) {
+                    delete m_pMainWnd;
+                    m_pMainWnd = nullptr;
+                }
+
+                m_pMainWnd = new MainWindow(this);
+
 				m_pMainWnd->Load(m_projectList[i]);
 				m_pMainWnd->show();
 				this->hide();
@@ -165,6 +183,9 @@ void WelcomeWindow::OpenButton_clicked()
 
 void WelcomeWindow::DeleteButton_clicked()
 {
+    if (QMessageBox::question(this, "Pk Creator", "Are you sure you want to remove project with all files?") == QMessageBox::No)
+        return;
+
 	if (m_ui.projectView->selectedItems().isEmpty())
 	{
 		QMessageBox::information(this, "PK Creator", "Please select project!");
@@ -179,6 +200,12 @@ void WelcomeWindow::DeleteButton_clicked()
 		{
 			if (m_projectList[i]->item == treeItem)
 			{
+                QDir dir(m_projectList[i]->path + "resources");
+                dir.removeRecursively();
+
+                QFile file(m_projectList[i]->path + m_projectList[i]->name + ".pkp");
+                file.remove();
+
 				delete m_projectList[i];
 				m_projectList[i] = nullptr;
 
