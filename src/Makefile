@@ -60,8 +60,6 @@ SOURCES       = CodeEditor.cpp \
 		main.cpp \
 		MainWindow.cpp \
 		Object.cpp \
-		qrc_MainWindow.cpp \
-		qrc_res.cpp \
 		ResourceView.cpp \
 		Scene.cpp \
 		Sprite.cpp \
@@ -86,8 +84,6 @@ OBJECTS       = CodeEditor.o \
 		main.o \
 		MainWindow.o \
 		Object.o \
-		qrc_MainWindow.o \
-		qrc_res.o \
 		ResourceView.o \
 		Scene.o \
 		Sprite.o \
@@ -246,12 +242,6 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		Sprite.h \
 		Texture.h \
 		TreeModel.h \
-		ui_CodeWindow.h \
-		ui_MainWindow.h \
-		ui_ObjectWindow.h \
-		ui_SpriteWindow.h \
-		ui_TextureWindow.h \
-		ui_WelcomeWindow.h \
 		WelcomeWindow.h \
 		Vendor/lua/include/lauxlib.h \
 		Vendor/lua/include/lua.h \
@@ -265,8 +255,6 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		main.cpp \
 		MainWindow.cpp \
 		Object.cpp \
-		qrc_MainWindow.cpp \
-		qrc_res.cpp \
 		ResourceView.cpp \
 		Scene.cpp \
 		Sprite.cpp \
@@ -561,8 +549,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents MainWindow.qrc res/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents CodeEditor.h CodeEditorWindow.h EventItem.h Highlighter.h Item.h LineNumberArea.h LuaDebugger.h MainWindow.h Object.h ResourceView.h Scene.h Sprite.h Texture.h TreeModel.h ui_CodeWindow.h ui_MainWindow.h ui_ObjectWindow.h ui_SpriteWindow.h ui_TextureWindow.h ui_WelcomeWindow.h WelcomeWindow.h Vendor/lua/include/lauxlib.h Vendor/lua/include/lua.h Vendor/lua/include/lua.hpp Vendor/lua/include/luaconf.h Vendor/lua/include/lualib.h $(DISTDIR)/
-	$(COPY_FILE) --parents CodeEditor.cpp CodeEditorWindow.cpp EventItem.cpp Highlighter.cpp LuaDebugger.cpp main.cpp MainWindow.cpp Object.cpp qrc_MainWindow.cpp qrc_res.cpp ResourceView.cpp Scene.cpp Sprite.cpp Texture.cpp TreeModel.cpp WelcomeWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents CodeEditor.h CodeEditorWindow.h EventItem.h Highlighter.h Item.h LineNumberArea.h LuaDebugger.h MainWindow.h Object.h ResourceView.h Scene.h Sprite.h Texture.h TreeModel.h WelcomeWindow.h Vendor/lua/include/lauxlib.h Vendor/lua/include/lua.h Vendor/lua/include/lua.hpp Vendor/lua/include/luaconf.h Vendor/lua/include/lualib.h $(DISTDIR)/
+	$(COPY_FILE) --parents CodeEditor.cpp CodeEditorWindow.cpp EventItem.cpp Highlighter.cpp LuaDebugger.cpp main.cpp MainWindow.cpp Object.cpp ResourceView.cpp Scene.cpp Sprite.cpp Texture.cpp TreeModel.cpp WelcomeWindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents CodeWindow.ui MainWindow.ui ObjectWindow.ui SceneWindow.ui SpriteWindow.ui TextureWindow.ui WelcomeWindow.ui $(DISTDIR)/
 
 
@@ -768,12 +756,6 @@ Object.o: Object.cpp Object.h \
 		Sprite.h \
 		ui_SpriteWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Object.o Object.cpp
-
-qrc_MainWindow.o: qrc_MainWindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_MainWindow.o qrc_MainWindow.cpp
-
-qrc_res.o: qrc_res.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_res.o qrc_res.cpp
 
 ResourceView.o: ResourceView.cpp ResourceView.h \
 		Texture.h \

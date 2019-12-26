@@ -28,18 +28,12 @@ HEADERS += CodeEditor.h \
            Sprite.h \
            Texture.h \
            TreeModel.h \
-           ui_CodeWindow.h \
-           ui_MainWindow.h \
-           ui_ObjectWindow.h \
-           ui_SpriteWindow.h \
-           ui_TextureWindow.h \
-           ui_WelcomeWindow.h \
            WelcomeWindow.h \
-           Vendor/lua/include/lauxlib.h \
-           Vendor/lua/include/lua.h \
-           Vendor/lua/include/lua.hpp \
-           Vendor/lua/include/luaconf.h \
-           Vendor/lua/include/lualib.h
+           ../Vendor/lua/include/lauxlib.h \
+           ../Vendor/lua/include/lua.h \
+           ../Vendor/lua/include/lua.hpp \
+           ../Vendor/lua/include/luaconf.h \
+           ../Vendor/lua/include/lualib.h
 FORMS += CodeWindow.ui \
          MainWindow.ui \
          ObjectWindow.ui \
@@ -55,8 +49,6 @@ SOURCES += CodeEditor.cpp \
            main.cpp \
            MainWindow.cpp \
            Object.cpp \
-           qrc_MainWindow.cpp \
-           qrc_res.cpp \
            ResourceView.cpp \
            Scene.cpp \
            Sprite.cpp \
