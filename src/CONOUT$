@@ -1,3 +1,17 @@
 Opening...
-Saved in: 1 ms
-Saved in: 1 ms
+Opened!
+Version: "PKP1"
+Version checked!
+1 1 1
+Size: 3
+
+[0] Type: 0 Name: "tx_player_a"
+
+[1] Type: 1 Name: "spr_player_a"
+Name: tx_player_a
+
+[2] Type: 3 Name: "obj_player_a"
+Name: "spr_player_a"
+spr_player_a
+Size: 0
+Loaded "GD" in 4 ms 

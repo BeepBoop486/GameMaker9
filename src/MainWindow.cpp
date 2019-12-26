@@ -10,6 +10,7 @@
 #include <Object.h>
 #include <WelcomeWindow.h>
 
+
 MainWindow *MainWindow::s_pInst;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -46,8 +47,8 @@ void MainWindow::Load(Project * project)
 {
 	m_proInfo = project;
 
-    QTime timer;
-    timer.start();
+	QTime timer;
+	timer.start();
 
 	if (m_proInfo)
 	{
@@ -67,29 +68,28 @@ void MainWindow::Load(Project * project)
 
 		QDataStream stream(&file);
 
-		//QString version;
-        QString version, name;
-        stream >> version >> name;
-        printf("Version: \"%s\"\n", version.toStdString().c_str());
+		QString version, name;
+		stream >> version >> name;
+		printf("Version: \"%s\"\n", version.toStdString().c_str());
 
-        if (version != "PKP1")
-            return;
+		if (version != "PKP1")
+			return;
 
-        printf("Version checked!\n");
+		printf("Version checked!\n");
 
-		m_pResView->Load(&stream);
+		m_pResView->Load(&stream, project->path);
 
 		file.close();
 	}
 
 
-    printf("Loaded \"%s\" in %d ms \n", m_proInfo->name.toStdString().c_str(), timer.elapsed());
+	printf("Loaded \"%s\" in %d ms \n", m_proInfo->name.toStdString().c_str(), timer.elapsed());
 }
 
 void MainWindow::Save()
 {
-    QTime timer;
-    timer.start();
+	QTime timer;
+	timer.start();
 
 	if (m_proInfo)
 	{
@@ -99,14 +99,14 @@ void MainWindow::Save()
 		QDataStream stream(&file);
 
 		// version id
-        stream << QString("PKP1") << m_proInfo->name;
+		stream << QString("PKP1") << m_proInfo->name;
 
 		m_pResView->Save(&stream);
 
 		file.close();
 	}
 
-    printf("Saved in: %d ms\n", timer.elapsed());
+	printf("Saved in: %d ms\n", timer.elapsed());
 }
 
 void MainWindow::ActionSaveProject_triggered()
