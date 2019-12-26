@@ -20,6 +20,7 @@ HEADERS += CodeEditor.h \
            Highlighter.h \
            Item.h \
            LineNumberArea.h \
+           LuaDebugger.h \
            MainWindow.h \
            Object.h \
            ResourceView.h \
@@ -37,6 +38,7 @@ SOURCES += CodeEditor.cpp \
            CodeEditorWindow.cpp \
            EventItem.cpp \
            Highlighter.cpp \
+           LuaDebugger.cpp \
            main.cpp \
            MainWindow.cpp \
            Object.cpp \
@@ -48,3 +50,6 @@ SOURCES += CodeEditor.cpp \
 RESOURCES += MainWindow.qrc res/res.qrc
 
 QT += core gui widgets
+
+unix: CONFIG += link_pkgconfig
+unix: PKGCONFIG += lua

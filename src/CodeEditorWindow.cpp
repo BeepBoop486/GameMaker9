@@ -1,7 +1,9 @@
 #include "CodeEditorWindow.h"
 
 #include <QFileDialog>
+#include <QTimer>
 
+#include <ResourceView.h>
 #include <CodeEditor.h>
 #include <Highlighter.h>
 
