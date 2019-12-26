@@ -24,6 +24,7 @@ HEADERS += CodeEditor.h \
            MainWindow.h \
            Object.h \
            ResourceView.h \
+           Scene.h \
            Sprite.h \
            Texture.h \
            TreeModel.h \
@@ -33,12 +34,14 @@ FORMS += CodeWindow.ui \
          ObjectWindow.ui \
          SpriteWindow.ui \
          TextureWindow.ui \
-         WelcomeWindow.ui
+         WelcomeWindow.ui \
+         SceneWindow.ui
 SOURCES += CodeEditor.cpp \
            CodeEditorWindow.cpp \
            EventItem.cpp \
            Highlighter.cpp \
            LuaDebugger.cpp \
+           Scene.cpp \
            main.cpp \
            MainWindow.cpp \
            Object.cpp \
