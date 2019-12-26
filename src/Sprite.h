@@ -47,6 +47,7 @@ private slots:
 	void OkButton_clicked();
 	void AddButton_clicked();
 	void EditButton_clicked();
+    void AutoCenterButton_Clicked();
 	void TextureBox_activated(int index);
 	void CenterXEdit_editingFinished();
 	void CenterYEdit_editingFinished();

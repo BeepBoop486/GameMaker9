@@ -19,6 +19,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -38,11 +39,13 @@ public:
     QPushButton *addButton;
     QPushButton *editButton;
     QLabel *centerLabel;
+    QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_2;
     QLabel *xLabel;
     QLineEdit *centerXEdit;
     QLabel *yLabel;
     QLineEdit *centerYEdit;
+    QPushButton *autoCenterButton;
     QGridLayout *gridLayout_2;
     QLabel *imageLabel;
 
@@ -50,7 +53,7 @@ public:
     {
         if (SpriteWindow->objectName().isEmpty())
             SpriteWindow->setObjectName(QString::fromUtf8("SpriteWindow"));
-        SpriteWindow->resize(229, 160);
+        SpriteWindow->resize(222, 191);
         SpriteWindow->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         horizontalLayout = new QHBoxLayout(SpriteWindow);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -124,6 +127,8 @@ public:
 
         gridLayout->addWidget(centerLabel, 3, 1, 1, 1);
 
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         xLabel = new QLabel(SpriteWindow);
@@ -156,7 +161,15 @@ public:
         horizontalLayout_2->addWidget(centerYEdit);
 
 
-        gridLayout->addLayout(horizontalLayout_2, 3, 2, 1, 1);
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        autoCenterButton = new QPushButton(SpriteWindow);
+        autoCenterButton->setObjectName(QString::fromUtf8("autoCenterButton"));
+
+        verticalLayout->addWidget(autoCenterButton);
+
+
+        gridLayout->addLayout(verticalLayout, 3, 2, 1, 1);
 
 
         horizontalLayout->addLayout(gridLayout);
@@ -193,6 +206,7 @@ public:
         centerXEdit->setText(QCoreApplication::translate("SpriteWindow", "0", nullptr));
         yLabel->setText(QCoreApplication::translate("SpriteWindow", "y", nullptr));
         centerYEdit->setText(QCoreApplication::translate("SpriteWindow", "0", nullptr));
+        autoCenterButton->setText(QCoreApplication::translate("SpriteWindow", "Auto Center", nullptr));
         imageLabel->setText(QString());
     } // retranslateUi
 

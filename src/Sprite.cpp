@@ -176,6 +176,17 @@ void Sprite::TextureBox_activated(int index)
 	}
 }
 
+void Sprite::AutoCenterButton_Clicked() {
+    if (!m_pCurrTex)
+        return;
+
+    m_xCenter = m_pCurrTex->GetWidth() / 2;
+    m_yCenter = m_pCurrTex->GetHeight() / 2;
+
+    m_ui.centerXEdit->setText(QString::number(m_xCenter));
+    m_ui.centerYEdit->setText(QString::number(m_yCenter));
+}
+
 void Sprite::CenterXEdit_editingFinished()
 {
 	 m_xCenter = m_ui.centerXEdit->text().toInt();
@@ -222,6 +233,9 @@ void Sprite::Load(QDataStream *const dataStream)
 	}
 
 	*dataStream >> m_xCenter >> m_yCenter;
+
+    m_ui.centerXEdit->setText(QString::number(m_xCenter));
+    m_ui.centerYEdit->setText(QString::number(m_yCenter));
 }
 
 void Sprite::Save(QDataStream *const dataStream)
