@@ -24,9 +24,9 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindowClass
 {
 public:
-    QAction *actionNew_Project;
-    QAction *actionOpen_Project;
-    QAction *actionSave_Project;
+    QAction *actionNewProject;
+    QAction *actionOpenProject;
+    QAction *actionSaveProject;
     QAction *actionExit;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
@@ -40,12 +40,12 @@ public:
         MainWindowClass->resize(800, 600);
         MainWindowClass->setMinimumSize(QSize(800, 600));
         MainWindowClass->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
-        actionNew_Project = new QAction(MainWindowClass);
-        actionNew_Project->setObjectName(QString::fromUtf8("actionNew_Project"));
-        actionOpen_Project = new QAction(MainWindowClass);
-        actionOpen_Project->setObjectName(QString::fromUtf8("actionOpen_Project"));
-        actionSave_Project = new QAction(MainWindowClass);
-        actionSave_Project->setObjectName(QString::fromUtf8("actionSave_Project"));
+        actionNewProject = new QAction(MainWindowClass);
+        actionNewProject->setObjectName(QString::fromUtf8("actionNewProject"));
+        actionOpenProject = new QAction(MainWindowClass);
+        actionOpenProject->setObjectName(QString::fromUtf8("actionOpenProject"));
+        actionSaveProject = new QAction(MainWindowClass);
+        actionSaveProject->setObjectName(QString::fromUtf8("actionSaveProject"));
         actionExit = new QAction(MainWindowClass);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         centralWidget = new QWidget(MainWindowClass);
@@ -63,9 +63,9 @@ public:
         MainWindowClass->setMenuBar(menuBar);
 
         menuBar->addAction(menuFile->menuAction());
-        menuFile->addAction(actionNew_Project);
-        menuFile->addAction(actionOpen_Project);
-        menuFile->addAction(actionSave_Project);
+        menuFile->addAction(actionNewProject);
+        menuFile->addAction(actionOpenProject);
+        menuFile->addAction(actionSaveProject);
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
 
@@ -77,9 +77,9 @@ public:
     void retranslateUi(QMainWindow *MainWindowClass)
     {
         MainWindowClass->setWindowTitle(QCoreApplication::translate("MainWindowClass", "PK Creator ", nullptr));
-        actionNew_Project->setText(QCoreApplication::translate("MainWindowClass", "New Project", nullptr));
-        actionOpen_Project->setText(QCoreApplication::translate("MainWindowClass", "Open Project", nullptr));
-        actionSave_Project->setText(QCoreApplication::translate("MainWindowClass", "Save Project", nullptr));
+        actionNewProject->setText(QCoreApplication::translate("MainWindowClass", "New Project", nullptr));
+        actionOpenProject->setText(QCoreApplication::translate("MainWindowClass", "Open Project", nullptr));
+        actionSaveProject->setText(QCoreApplication::translate("MainWindowClass", "Save Project", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindowClass", "Exit", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindowClass", "File", nullptr));
     } // retranslateUi

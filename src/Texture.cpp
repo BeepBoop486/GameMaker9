@@ -14,8 +14,8 @@ Texture::Texture(QWidget *parent, QStandardItem *item, const QString &itemName)
 
 	m_type = Item::TEXTURE;
 
-    m_width = -1;
-    m_height= -1;
+	m_width = -1;
+	m_height = -1;
 
 	connect(m_ui.okButton, SIGNAL(clicked()), this, SLOT(OkButton_clicked()));
 	connect(m_ui.loadButton, SIGNAL(clicked()), this, SLOT(LoadButton_clicked()));
@@ -45,7 +45,7 @@ void Texture::OkButton_clicked()
 
 	SetName(name);
 	hide();
-    accept();
+	accept();
 }
 
 void Texture::LoadButton_clicked()
@@ -66,6 +66,18 @@ void Texture::LoadButton_clicked()
 	m_ui.widthValueLabel->setText(QString::number(size.width()) + "px");
 	m_ui.heightValueLabel->setText(QString::number(size.height()) + "px");
 
-    m_width = size.width();
-    m_height= size.height();
+	m_width = size.width();
+	m_height = size.height();
+}
+
+void Texture::Load(QDataStream *const dataStream)
+{
+	*dataStream >> m_width >> m_height;
+}
+
+void Texture::Save(QDataStream *const dataStream)
+{
+	Item::Save(dataStream);
+
+	*dataStream << m_width << m_height;
 }

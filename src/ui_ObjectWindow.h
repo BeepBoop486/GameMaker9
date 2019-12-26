@@ -51,7 +51,7 @@ public:
     {
         if (ObjectWindow->objectName().isEmpty())
             ObjectWindow->setObjectName(QString::fromUtf8("ObjectWindow"));
-        ObjectWindow->resize(512, 400);
+        ObjectWindow->resize(512, 340);
         ObjectWindow->setMinimumSize(QSize(512, 300));
         ObjectWindow->setMaximumSize(QSize(512, 16777215));
         ObjectWindow->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));

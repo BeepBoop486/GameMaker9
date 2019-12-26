@@ -708,7 +708,9 @@ MainWindow.o: MainWindow.cpp MainWindow.h \
 		ResourceView.h \
 		Object.h \
 		Item.h \
-		ui_ObjectWindow.h
+		ui_ObjectWindow.h \
+		WelcomeWindow.h \
+		ui_WelcomeWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o MainWindow.cpp
 
 Object.o: Object.cpp Object.h \
@@ -750,7 +752,9 @@ TreeModel.o: TreeModel.cpp TreeModel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TreeModel.o TreeModel.cpp
 
 WelcomeWindow.o: WelcomeWindow.cpp WelcomeWindow.h \
-		ui_WelcomeWindow.h
+		ui_WelcomeWindow.h \
+		MainWindow.h \
+		ui_MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o WelcomeWindow.o WelcomeWindow.cpp
 
 qrc_MainWindow.o: qrc_MainWindow.cpp 

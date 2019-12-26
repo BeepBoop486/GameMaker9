@@ -22,15 +22,15 @@ private:
 
 	QVector<ComboBoxItem*>	m_textures;
 
+	// to save
 	Texture					*m_pCurrTex;
 
-private: // to save
 	int						m_xCenter;
 	int						m_yCenter;
 
 private:
 	void RefreshTextureBox();
-    void RefreshSpriteCenter();
+	void RefreshSpriteCenter();
 
 protected:
 	virtual bool event(QEvent *e) override;
@@ -40,6 +40,8 @@ public:
 	~Sprite();
 
 	virtual void SetName(const QString &name) override;
+	virtual void Load(QDataStream * const dataStream) override;
+	virtual void Save(QDataStream * const dataStream) override;
 
 private slots:
 	void OkButton_clicked();
