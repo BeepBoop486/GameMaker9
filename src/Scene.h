@@ -1,15 +1,18 @@
 #pragma once
 
-#include <QMainWindow>
 #include "ui_SceneWindow.h"
+#include <Item.h>
 
-class Scene : public QMainWindow
+class Scene : public Item
 {
     Q_OBJECT
+
 private:
     Ui::SceneWindow ui;
 
 public:
-    Scene(QWidget *parent = 0);
+    Scene(QWidget *parent, QStandardItem *item, const QString &itemName);
     ~Scene();
+
+    void RefreshObjectList()
 };
