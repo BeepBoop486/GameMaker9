@@ -215,9 +215,9 @@ void ResourceView::ActionAdd_triggered()
             }
             treeItem = InsertRow(treeItem, name);
 
-            //Item *item = new Scene(this, treeItem, name);
-            //item->show();
-            //m_items.push_back(item);
+            Item *item = new Scene(this, treeItem, name);
+            item->show();
+            m_items.push_back(item);
 		} break;
 	}
 }
