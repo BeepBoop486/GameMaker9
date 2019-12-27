@@ -9,7 +9,6 @@
 
 WelcomeWindow *WelcomeWindow::s_pInst;
 
-
 WelcomeWindow::WelcomeWindow(QWidget *parent)
 	: QDialog(parent)
 {
@@ -27,7 +26,7 @@ WelcomeWindow::WelcomeWindow(QWidget *parent)
 
 	connect(m_ui.projectView, &QTreeWidget::doubleClicked, this, &WelcomeWindow::OpenButton_clicked);
 
-    s_pInst = this;
+	s_pInst = this;
 }
 
 WelcomeWindow::~WelcomeWindow()
@@ -159,7 +158,7 @@ void WelcomeWindow::OpenButton_clicked()
 {
 	if (m_ui.projectView->selectedItems().isEmpty())
 	{
-		QMessageBox::information(this, "GameMaker 9", "Please select project!");
+		QMessageBox::information(this, "PK Creator", "Please select project!");
 		return;
 	}
 
@@ -177,7 +176,7 @@ void WelcomeWindow::OpenButton_clicked()
 					m_pMainWnd = nullptr;
 				}
 
-                m_pMainWnd = new MainWindow();
+				m_pMainWnd = new MainWindow();
 
 				m_pMainWnd->Load(m_projectList[i]);
 				m_pMainWnd->show();
@@ -191,7 +190,7 @@ void WelcomeWindow::DeleteButton_clicked()
 {
 	if (m_ui.projectView->selectedItems().isEmpty())
 	{
-		QMessageBox::information(this, "GameMaker 9", "Please select project!");
+		QMessageBox::information(this, "PK Creator", "Please select project!");
 		return;
 	}
 

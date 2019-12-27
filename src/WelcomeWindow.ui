@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>519</width>
+    <width>465</width>
     <height>308</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>GameMaker 9 - Welcome screen</string>
+   <string>PK Creator - Welcone screen</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

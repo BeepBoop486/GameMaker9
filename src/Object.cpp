@@ -30,7 +30,7 @@ Object::Object(QWidget *parent, QStandardItem *item, const QString &itemName)
 
 	m_ui.spriteBox->setCurrentIndex(0);
 
-    m_ui.nameEdit->setValidator(new QRegExpValidator(QRegExp("[A-Za-z0-9]{1,24}")));
+	m_ui.nameEdit->setValidator(new QRegExpValidator(QRegExp("[A-Za-z0-9]{1,24}")));
 
 	connect(m_ui.okButton, SIGNAL(clicked()), this, SLOT(OkButton_clicked()));
 	connect(m_ui.addButton, SIGNAL(clicked()), this, SLOT(AddEventButton_clicked()));
@@ -199,7 +199,7 @@ void Object::OkButton_clicked()
 
 	if (ResourceView::Get()->IsNameExists(name) && name != m_itemName)
 	{
-		QMessageBox::information(this, "GameMaker 9", "This name already exists!");
+		QMessageBox::information(this, "PK Creator", "This name already exists!");
 		return;
 	}
 
@@ -252,7 +252,7 @@ void Object::AddEventAction_triggered(int eventType)
 
 	if (GetEvent(eventType))
 	{
-		QMessageBox::information(this, "GameMaker 9", QString::asprintf("%s already exists!", m_eventName[eventType].toStdString().c_str()));
+		QMessageBox::information(this, "PK Creator", QString::asprintf("%s already exists!", m_eventName[eventType].toStdString().c_str()));
 
 		return;
 	}
@@ -367,7 +367,7 @@ void Object::Load(QDataStream *const dataStream)
 		m_pModel->appendRow(item);
 
 		EventItem *eventItem = new EventItem(this, (EventItem::Type)type, item);
-        eventItem->setWindowTitle(QString::asprintf("%s - %s", windowTitle().toStdString().c_str(), m_eventName[type].toStdString().c_str()));
+		eventItem->setWindowTitle(QString::asprintf("%s - %s", windowTitle().toStdString().c_str(), m_eventName[type].toStdString().c_str()));
 		eventItem->Load(dataStream);
 
 		m_events.push_back(eventItem);

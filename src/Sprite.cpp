@@ -25,7 +25,7 @@ Sprite::Sprite(QWidget *parent, QStandardItem *item, const QString &itemName)
 
 	m_pCurrTex = nullptr;
 
-    m_ui.nameEdit->setValidator(new QRegExpValidator(QRegExp("[A-Za-z0-9]{1,24}")));
+	m_ui.nameEdit->setValidator(new QRegExpValidator(QRegExp("[A-Za-z0-9]{1,24}")));
 
 	connect(m_ui.textureBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &Sprite::TextureBox_activated);
 
@@ -111,7 +111,7 @@ void Sprite::OkButton_clicked()
 
 	if (ResourceView::Get()->IsNameExists(name) && name != m_itemName)
 	{
-		QMessageBox::information(this, "GameMaker 9", "This name already exists!");
+		QMessageBox::information(this, "PK Creator", "This name already exists!");
 		return;
 	}
 
@@ -178,15 +178,16 @@ void Sprite::TextureBox_activated(int index)
 	}
 }
 
-void Sprite::AutoCenterButton_Clicked() {
-    if (!m_pCurrTex)
-        return;
+void Sprite::AutoCenterButton_clicked()
+{
+	if (!m_pCurrTex)
+		return;
 
-    m_xCenter = m_pCurrTex->GetWidth() / 2;
-    m_yCenter = m_pCurrTex->GetHeight() / 2;
+	m_xCenter = m_pCurrTex->GetWidth() / 2;
+	m_yCenter = m_pCurrTex->GetHeight() / 2;
 
-    m_ui.centerXEdit->setText(QString::number(m_xCenter));
-    m_ui.centerYEdit->setText(QString::number(m_yCenter));
+	m_ui.centerXEdit->setText(QString::number(m_xCenter));
+	m_ui.centerYEdit->setText(QString::number(m_yCenter));
 }
 
 void Sprite::CenterXEdit_editingFinished()
@@ -236,8 +237,8 @@ void Sprite::Load(QDataStream *const dataStream)
 
 	*dataStream >> m_xCenter >> m_yCenter;
 
-    m_ui.centerXEdit->setText(QString::number(m_xCenter));
-    m_ui.centerYEdit->setText(QString::number(m_yCenter));
+	m_ui.centerXEdit->setText(QString::number(m_xCenter));
+	m_ui.centerYEdit->setText(QString::number(m_yCenter));
 }
 
 void Sprite::Save(QDataStream *const dataStream)
@@ -246,4 +247,3 @@ void Sprite::Save(QDataStream *const dataStream)
 
 	*dataStream << (m_pCurrTex ? m_pCurrTex->GetName() : QString("")) << m_xCenter << m_yCenter;
 }
-

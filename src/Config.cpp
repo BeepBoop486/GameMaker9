@@ -1,11 +1,11 @@
 #include "Config.h"
 
 Config::Config(QWidget *parent)
-        : QDialog(parent)
+	: QDialog(parent)
 {
-    ui.setupUi(this);
+	ui.setupUi(this);
 }
 
-Config::~Config() {
-
+Config::~Config()
+{
 }

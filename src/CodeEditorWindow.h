@@ -12,14 +12,14 @@ class Highlighter;
 class CodeEditorWindow : public QMainWindow
 {
 protected:
-    Ui::CodeWindow      m_ui;
+	Ui::CodeWindow		m_ui;
 
-    CodeEditor          *m_pCodeEditor;
-    Highlighter         *m_pHighlighter;
+	CodeEditor			*m_pCodeEditor;
+	Highlighter			*m_pHighlighter;
 
-    QTimer              *m_pTimer;
+	QTimer				*m_pTimer;
 
-    bool                m_codeChanged;
+	bool				m_codeChanged;
 
 public:
 	CodeEditorWindow(QWidget *parent);
@@ -33,6 +33,6 @@ private slots:
 	void ActionOpen_triggered();
 	void CodeEditor_textChanged();
 
-    void Timer_timeout();
+	void Timer_timeout();
 };
 

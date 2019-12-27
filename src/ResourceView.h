@@ -20,7 +20,7 @@ private:
 
 	QString				m_mainDir;
 
-    LuaDebugger         *m_pLuaDebugger;
+	LuaDebugger			*m_pLuaDebugger;
 
 	// to save
 	QStandardItemModel	*m_pTreeModel;
@@ -30,7 +30,7 @@ private:
 	int					m_lastTextureID;
 	int					m_lastSpriteID;
 	int					m_lastObjectID;
-    int                 m_lastSceneID;
+	int					m_lastSceneID;
 	
 	static ResourceView *s_pInst;
 
@@ -68,7 +68,7 @@ public:
 	// @type - Item::Type
 	QVector <Item*> GetItemsByType(int type);
 
-    LuaDebugger *GetLuaDebugger() { return m_pLuaDebugger; }
+	LuaDebugger *GetLuaDebugger() { return m_pLuaDebugger; }
 
 	static ResourceView *Get() { return s_pInst; }
 };

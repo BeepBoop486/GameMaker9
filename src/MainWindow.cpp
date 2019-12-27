@@ -23,11 +23,11 @@ MainWindow::MainWindow(QWidget *parent)
 	m_pResView->setEnabled(true);
 	m_pResView->setMouseTracking(true);
 	m_pResView->setMaximumSize(QSize(200, 16777215));
-    m_pResView->setMinimumSize(QSize(200, 400));
+	m_pResView->setMinimumSize(QSize(200, 400));
 	m_pResView->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
 	ui.verticalLayout->addWidget(m_pResView);
 
-    setWindowFlags(windowFlags() | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::Dialog);
+	setWindowFlags(windowFlags() | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::Dialog);
 
 	connect(ui.actionExit, SIGNAL(triggered()), this, SLOT(ActionExit_triggered()));
 	connect(ui.actionSaveProject, SIGNAL(triggered()), this, SLOT(ActionSaveProject_triggered()));
@@ -44,7 +44,7 @@ MainWindow::~MainWindow()
 		m_pResView = nullptr;
 	}
 
-    s_pInst = nullptr;
+	s_pInst = nullptr;
 }
 
 void MainWindow::Load(Project * project)
@@ -120,7 +120,7 @@ void MainWindow::ActionSaveProject_triggered()
 
 void MainWindow::ActionOpenProject_triggered()
 {
-    WelcomeWindow::Get()->show();
+	WelcomeWindow::Get()->show();
 	this->hide();
 }
 

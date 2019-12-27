@@ -15,8 +15,6 @@ private: // to save
 	int					m_height;
 	QString				m_texPath; // relative path ("resources/m_itemName.ext")
 
-
-
 public:
 	Texture(QWidget *parent, QStandardItem *item, const QString &itemName);
 	virtual ~Texture();
@@ -26,7 +24,7 @@ public:
 	int GetWidth() { return m_width; }
 	int GetHeight() { return m_height; }
 
-    const QString &GetPath() {return m_texPath;}
+	const QString &GetPath() { return m_texPath; }
 
 	virtual void Load(QDataStream *const dataStream) override;
 	virtual void Save(QDataStream *const dataStream) override;

@@ -22,10 +22,10 @@ CodeEditorWindow::CodeEditorWindow(QWidget *parent)
 
 	m_codeChanged = false;
 
-    m_pTimer = new QTimer(this);
-    m_pTimer->setSingleShot(true);
+	m_pTimer = new QTimer(this);
+	m_pTimer->setSingleShot(true);
 
-    connect(m_pTimer, &QTimer::timeout, this, &CodeEditorWindow::Timer_timeout);
+	connect(m_pTimer, &QTimer::timeout, this, &CodeEditorWindow::Timer_timeout);
 
 	connect(m_ui.actionCut, &QAction::triggered, m_pCodeEditor, &QPlainTextEdit::cut);
 	connect(m_ui.actionCopy, &QAction::triggered, m_pCodeEditor, &QPlainTextEdit::copy);
@@ -81,11 +81,12 @@ void CodeEditorWindow::CodeEditor_textChanged()
 
 	m_codeChanged = true;
 
-    m_pTimer->start(100);
+	m_pTimer->start(1000);
 }
 
-void CodeEditorWindow::Timer_timeout() {
-    QString error = ResourceView::Get()->GetLuaDebugger()->TestScript(m_pCodeEditor->toPlainText(), QString("@script"));
-    // TODO: this
-    statusBar()->showMessage(error);
+void CodeEditorWindow::Timer_timeout()
+{
+	QString error = ResourceView::Get()->GetLuaDebugger()->TestScript(m_pCodeEditor->toPlainText(), QString("@script"));
+	
+	statusBar()->showMessage(error);
 }
