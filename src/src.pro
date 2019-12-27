@@ -16,6 +16,7 @@ INCLUDEPATH += .
 # Input
 HEADERS += CodeEditor.h \
            CodeEditorWindow.h \
+           Config.h \
            EventItem.h \
            Highlighter.h \
            Item.h \
@@ -40,9 +41,11 @@ FORMS += CodeWindow.ui \
          SceneWindow.ui \
          SpriteWindow.ui \
          TextureWindow.ui \
-         WelcomeWindow.ui
+         WelcomeWindow.ui \
+         ConfigWindow.ui
 SOURCES += CodeEditor.cpp \
            CodeEditorWindow.cpp \
+           Config.cpp \
            EventItem.cpp \
            Highlighter.cpp \
            LuaDebugger.cpp \
