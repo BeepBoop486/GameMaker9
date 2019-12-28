@@ -55,7 +55,8 @@ SOURCES += CodeEditor.cpp \
            Texture.cpp \
            TreeModel.cpp \
            WelcomeWindow.cpp
-RESOURCES += MainWindow.qrc res/res.qrc
+RESOURCES += Resources.qrc res/res.qrc \
+    Resources.qrc
 
 QT += core gui widgets
 
