@@ -1,5 +1,5 @@
 <RCC>
-   <qresource prefix="/MainWindow"/>
+    <qresource prefix="/MainWindow"/>
     <qresource prefix="/CodeWindow">
         <file>res/copyIcon.png</file>
         <file>res/saveAsIcon.png</file>
@@ -8,7 +8,7 @@
         <file>res/openIcon.png</file>
         <file>res/pasteIcon.png</file>
         <file>res/saveIcon.png</file>
-	<file>res/DejaVuSansMono.ttf</file>
+        <file>res/DejaVuSansMono.ttf</file>
     </qresource>
     <qresource prefix="/ResourceView">
         <file>res/configIcon.png</file>

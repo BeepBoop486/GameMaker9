@@ -11,6 +11,7 @@
 #include <Sprite.h>
 #include <Object.h>
 #include <Scene.h>
+#include <Config.h>
 
 #include <LuaDebugger.h>
 
@@ -29,12 +30,14 @@ ResourceView::ResourceView(QWidget * parent)
 	m_lastObjectID = 0;
 	m_lastSceneID = 0;
 
+	m_pProConfig = new Config(this);
+
 	m_pLuaDebugger = new LuaDebugger();
 
 	s_pInst = this;
 
-    connect(this, &QTreeView::expanded, this, &ResourceView::ResourceView_expanded);
-    connect(this, &QTreeView::collapsed, this, &ResourceView::ResourceView_collapsed);
+	connect(this, &QTreeView::expanded, this, &ResourceView::ResourceView_expanded);
+	connect(this, &QTreeView::collapsed, this, &ResourceView::ResourceView_collapsed);
 }
 
 ResourceView::~ResourceView()
@@ -61,6 +64,12 @@ ResourceView::~ResourceView()
 	}
 
 	m_items.clear();
+
+	if (m_pProConfig)
+	{
+		delete m_pProConfig;
+		m_pProConfig = nullptr;
+	}
 }
 
 void ResourceView::Setup()
@@ -77,22 +86,22 @@ void ResourceView::Setup()
 	{
 		QStandardItem *item = new QStandardItem(m_defaultModel.at(i));
 
-        QIcon icon;
-        icon.addFile(":/ResourceView/res/folderCloseIcon.png");
+		QIcon icon;
+		icon.addFile(":/ResourceView/res/folderCloseIcon.png");
 
-        item->setIcon(icon);
+		item->setIcon(icon);
 		item->setEditable(false);
 
 		m_pTreeModel->appendRow(item);
 	}
 
-    QStandardItem *item = new QStandardItem("Config");
-    QIcon icon;
-    icon.addFile(":/ResourceView/res/configIcon.png");
-    item->setIcon(icon);
-    item->setEditable(false);
+	QStandardItem *item = new QStandardItem("Config");
+	QIcon icon;
+	icon.addFile(":/ResourceView/res/configIcon.png");
+	item->setIcon(icon);
+	item->setEditable(false);
 
-    m_pTreeModel->appendRow(item);
+	m_pTreeModel->appendRow(item);
 }
 
 void ResourceView::mousePressEvent(QMouseEvent * mouseEvent)
@@ -141,7 +150,12 @@ void ResourceView::mouseDoubleClickEvent(QMouseEvent *mouseEvent)
 		QStandardItem *treeItem = m_pTreeModel->itemFromIndex(index);
 
 		if (!treeItem->parent())
+		{
+			if (treeItem->text() == QString("Config"))
+				m_pProConfig->show();
+			
 			return;
+		}
 
 		Item *item = GetItem(treeItem);
 
@@ -308,11 +322,13 @@ void ResourceView::InsertItem(Item *item)
 
 void ResourceView::Load(QDataStream *const dataStream, const QString &currPath)
 {
-	*dataStream >> m_lastTextureID >> m_lastSpriteID >> m_lastObjectID;
+	m_pProConfig->Load(dataStream);
+
+	*dataStream >> m_lastTextureID >> m_lastSpriteID >> m_lastObjectID >> m_lastSceneID;
 
 	m_mainDir = currPath;
 
-	printf("%d %d %d\n", m_lastTextureID, m_lastSpriteID, m_lastObjectID);
+	printf("%d %d %d %d\n", m_lastTextureID, m_lastSpriteID, m_lastObjectID, m_lastSceneID);
 
 	int size = 0;
 
@@ -355,8 +371,8 @@ void ResourceView::Load(QDataStream *const dataStream, const QString &currPath)
 			} break;
 			case Item::SCENE:
 			{
-                item = new Scene(this, treeItem, name);
-            } break;
+				item = new Scene(this, treeItem, name);
+			} break;
 		}
 
 		if (!item)
@@ -370,7 +386,9 @@ void ResourceView::Load(QDataStream *const dataStream, const QString &currPath)
 
 void ResourceView::Save(QDataStream *const dataStream)
 {
-	*dataStream << m_lastTextureID << m_lastSpriteID << m_lastObjectID; // << m_lastSceneID
+	m_pProConfig->Save(dataStream);
+
+	*dataStream << m_lastTextureID << m_lastSpriteID << m_lastObjectID << m_lastSceneID;
 
 	qSort(m_items.begin(), m_items.end(), ItemsSort);
 
@@ -442,20 +460,20 @@ QVector<Item*> ResourceView::GetItemsByType(int type)
 
 void ResourceView::ResourceView_expanded(const QModelIndex &index)
 {
-    QStandardItem *item = m_pTreeModel->itemFromIndex(index);
+	QStandardItem *item = m_pTreeModel->itemFromIndex(index);
 
-    QIcon icon;
-    icon.addFile(":/ResourceView/res/folderOpenIcon.png");
+	QIcon icon;
+	icon.addFile(":/ResourceView/res/folderOpenIcon.png");
 
-    item->setIcon(icon);
+	item->setIcon(icon);
 }
 
 void ResourceView::ResourceView_collapsed(const QModelIndex &index)
 {
-    QStandardItem *item = m_pTreeModel->itemFromIndex(index);
+	QStandardItem *item = m_pTreeModel->itemFromIndex(index);
 
-    QIcon icon;
-    icon.addFile(":/ResourceView/res/folderCloseIcon.png");
+	QIcon icon;
+	icon.addFile(":/ResourceView/res/folderCloseIcon.png");
 
-    item->setIcon(icon);
+	item->setIcon(icon);
 }

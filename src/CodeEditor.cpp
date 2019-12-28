@@ -71,12 +71,12 @@ void CodeEditor::resizeEvent(QResizeEvent *e)
 
 void CodeEditor::SetupEditor()
 {
-    QFont font;
+	QFont font;
 
-    int id = QFontDatabase::addApplicationFont(":/CodeWindow/res/DejaVuSansMono.ttf");
-    QString family = QFontDatabase::applicationFontFamilies(id).first();
+	int id = QFontDatabase::addApplicationFont(":/CodeWindow/res/DejaVuSansMono.ttf");
+	QString family = QFontDatabase::applicationFontFamilies(id).first();
 
-    font.setFamily(family);
+	font.setFamily(family);
 	font.setFixedPitch(true);
 	font.setStyleHint(QFont::Monospace);
 	font.setPointSize(10);

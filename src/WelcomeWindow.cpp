@@ -190,7 +190,7 @@ void WelcomeWindow::DeleteButton_clicked()
 {
 	if (m_ui.projectView->selectedItems().isEmpty())
 	{
-		QMessageBox::information(this, "PK Creator", "Please select project!");
+        QMessageBox::information(this, "PK Creator", "Please select project!");
 		return;
 	}
 
